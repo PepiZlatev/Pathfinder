@@ -10,10 +10,12 @@ import java.util.Set;
 @Table(name = "routes")
 public class RouteEntity extends BaseEntity {
 
-    @Column(columnDefinition = "text")
+    @Lob
+    @Column(name = "gpx_coordinates")
     private String gpxCoordinates;
 
     @Enumerated(EnumType.STRING)
+    @Column(name = "level_enum")
     private LevelEnum level;
 
     private String name;
@@ -24,6 +26,7 @@ public class RouteEntity extends BaseEntity {
     @ManyToOne
     private UserEntity author;
 
+    @Column(name = "video_url")
     private String videoURL;
 
     @OneToMany(targetEntity = CommentsEntity.class, mappedBy = "route", cascade = CascadeType.ALL)

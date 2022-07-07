@@ -14,7 +14,7 @@ public class CommentsEntity extends BaseEntity{
 
     private LocalDateTime created;
 
-    @Column(columnDefinition = "text", nullable = false)
+    @Column(columnDefinition = "text", nullable = false, name = "text_content")
     private String textContent;
 
     @ManyToOne

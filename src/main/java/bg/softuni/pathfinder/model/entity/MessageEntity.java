@@ -13,7 +13,7 @@ public class MessageEntity extends BaseEntity{
     @Column(name = "date_time", nullable = false)
     private LocalDateTime dateTime;
 
-    @Column(columnDefinition = "text")
+    @Column(columnDefinition = "text", name = "text_content")
     private String textContent;
 
     @ManyToOne
